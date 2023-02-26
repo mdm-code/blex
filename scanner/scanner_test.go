@@ -65,7 +65,7 @@ func TestScannerScan(t *testing.T) {
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
-			s, err := NewScanner(strings.NewReader(c.input))
+			s, err := New(strings.NewReader(c.input))
 			if err != nil {
 				t.Fatal("failed to initialize the scanner")
 			}
@@ -140,7 +140,7 @@ func TestNewScannerErrors(t *testing.T) {
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
-			_, err := NewScanner(c.reader)
+			_, err := New(c.reader)
 			if err == nil {
 				t.Errorf("expected to get an error here")
 			}

@@ -32,9 +32,8 @@ type Scanner struct {
 	Buffer []byte
 }
 
-// NewScanner creates a new instance of the Scanner initialized at its zero
-// state.
-func NewScanner(r io.Reader) (*Scanner, error) {
+// New creates a new instance of the Scanner initialized at its zero state.
+func New(r io.Reader) (*Scanner, error) {
 	if r == nil {
 		return nil, ErrNilReader
 	}
